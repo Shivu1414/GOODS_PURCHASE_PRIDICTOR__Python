@@ -1,0 +1,36 @@
+Dictionary={"10":"Chocolate", "50":"flower", "100":"Toys",
+           "200":"T-Shirts", "500":"Jeans", "700":"Fruits", "1000":"Grocerry"
+            }
+
+while(True):
+    budget = float(input("What is your Budget ="))
+    num = int(input("How many no. of of product you want buy ="))
+    dict1={}
+    ls = []
+    amt = 0
+    for i in range(num):
+        n = input("What Product you want, Enter it's Price =")
+        dict1.update({n:Dictionary[n]})
+        if n in list(Dictionary.keys()):
+            amt = amt + int(n)
+            ls.append(Dictionary[n])
+        else:
+            print()
+            print("Enter valid Product Price ")
+            n = input("What Product you want Enter it's Price =")
+            ls.append(Dictionary[n])
+
+
+    print("Available goods are =")
+    print(Dictionary)
+    print("Purchase Goods with Price =")
+    print(dict1)
+    print("Purchased goods are =")
+    print(ls)
+    print("Total amount you spend =", amt)
+
+    if amt < budget:
+        print("Shoping Happend under the Budget & you have remaining=", (budget - amt))
+    else:
+        print("Shoping amount over than budget & Over amount is =", (amt - budget))
+    print()
